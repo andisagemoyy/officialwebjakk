@@ -1,0 +1,50 @@
+WEBSITE STASIUN JAKARTA KOTA — PANDUAN
+
+1. Ekstrak ZIP, lalu buka website-jakk/index.html di browser.
+   Website HTML/CSS/JS ini tidak membutuhkan npm, build, atau layanan GPT Site.
+
+2. Halaman utama:
+   index.html   = judul, deskripsi stasiun, struktur halaman
+   style.css    = warna dan tampilan responsif
+   script.js    = kartu aplikasi, jam WIB, pilihan background
+   config.js    = nama, deskripsi, kategori, dan lokasi file keenam aplikasi
+   assets/      = dua background dan ikon tab
+
+3. Masukkan masing-masing aplikasi ke folder berikut:
+   LAPKA MANUAL JAKK          -> aplikasi/lapka-manual-jakk/
+   LAPORAN KERETA API         -> aplikasi/laporan-kereta-api/
+   PANTAUAN JADWAL KA JAKK    -> aplikasi/pantauan-jadwal-ka-jakk/
+   PANTAUAN KERETA (ROLINK)   -> aplikasi/pantauan-kereta-rolink/
+   FORM LANGSIR KERTAS TIKET  -> aplikasi/form-langsir-kertas-tiket/
+   PANTAUAN SF KEBERANGKATAN KERETA JAKK
+                             -> aplikasi/pantauan-sf-keberangkatan-jakk/
+
+   Keenam folder saat ini berisi halaman placeholder, bukan aplikasi yang sudah
+   berfungsi. Ganti index.html placeholder dengan index.html aplikasi asli.
+   Sertakan seluruh file pendukung dan pertahankan struktur folder aplikasi.
+   Jika kode aplikasi berupa satu HTML lengkap, cukup ganti index.html.
+
+4. Bila file utama aplikasi namanya berbeda, ubah url di config.js.
+   Contoh: url: 'aplikasi/lapka-manual-jakk/lapka.html'
+   URL website lain juga dapat digunakan: url: 'https://contoh.com/'
+   Menu aplikasi dibuka pada tab yang sama. Kembali ke portal dengan tombol
+   Back browser; aplikasi asli dapat diberi tautan ../../index.html jika ingin.
+
+5. Untuk GitHub Pages/Netlify, unggah seluruh isi folder website-jakk,
+   termasuk assets/ dan aplikasi/. index.html harus ada di akar situs.
+   Mengisi config.js saja tidak mengunggah aplikasi; file aplikasi harus ikut.
+   Bila aplikasi membutuhkan server/API, ia tetap membutuhkan layanan aslinya.
+   Menambahkan file ke portal ini tidak mengubah cara kerja aplikasi tersebut.
+
+6. Background siang dan malam bisa dipilih di halaman utama. Pilihan disimpan
+   di browser jika tersedia. Jam menggunakan zona Asia/Jakarta (WIB).
+   Semua aset lokal; tidak ada font, framework, atau script pihak ketiga.
+
+7. Sumber deskripsi sejarah stasiun:
+   KAI Heritage — Sejarah Stasiun Jakarta Kota, 1 Juli 2026
+   https://www.kai.id/heritage/stasiun/sekilas-sejarah-stasiun-jakarta-kota
+   Pemprov DKI Jakarta — Landmark Jakarta (kawasan Kota Tua/Beos)
+   https://www.jakarta.go.id/index.php/landmark-jakarta
+   Background adalah ilustrasi dari gambar yang diberikan pengguna.
+
+Kode disiapkan untuk Andisa Jati.

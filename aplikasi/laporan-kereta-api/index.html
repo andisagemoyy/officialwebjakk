@@ -1,0 +1,902 @@
+<!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JAKK • Laporan Kereta api</title><meta name="theme-color" content="#0b111c"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IndoaXRlIi8+PHN2ZyB4PSI0IiB5PSIxOSIgd2lkdGg9IjU2IiBoZWlnaHQ9IjI2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOTQuNzQgMTI0LjIyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzJkMmE3MDt9LmNscy0ye2ZpbGw6I2VkNmIyMzt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPkxvZ28gS0FJIEJhcnU8L3RpdGxlPjxnIGlkPSJMYXllcl8yIj48ZyBpZD0iTGF5ZXJfMS0yIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik05OS41OCwxMjQuMjJoMjguNTZsLTYuNTUtMTAuNzdabTE2LjY3LTE5LjUzTDg2LjU2LDU1LjkxLDE0NC4xMiwwSDk4LjY1YTEzLjY1LDEzLjY1LDAsMCwwLTkuNTQsMy44OEw0OC43OSw0My4yOCw1My4zMywwSDEyLjI3TDAsMTE2LjgxYTYuNzEsNi43MSwwLDAsMCw2LjY4LDcuNDJoMzMuNkw0My4wNyw5OCw1NS40NSw4NmwyMS43OCwzNC40M2E4LjEzLDguMTMsMCwwLDAsNi44NywzLjc4SDk5LjU4bDcuODEtMTUuNTdaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTQxLDEyNC4yMmw1NS42MS0zMy44MSw3LjA4LDI4LjcxYTYuNzEsNi43MSwwLDAsMCw2LjUyLDUuMTFoMzZMMjMwLjEzLDcwbDYxLjI0LTM3LjI0LjI2LTIuNS0xOTIsOTMuOTVabTgzLjM4LTczLjY1TDIwOS4zNywwSDE3NGExOS41MiwxOS41MiwwLDAsMC0xNy40NSwxMC43N0wxMDYsMTExLjM3LDI5MiwyNi41MmwuMjktMi44NVpNMTY0LjYsNzQuMjQsMTc3LDQ4bDMuMjctNy4yNWEyLjIzLDIuMjMsMCwwLDEsNC4xOS4zOGw1LjY3LDIzWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI2OS41MywwYTE5LjUyLDE5LjUyLDAsMCwwLTE5LjQxLDE3LjQ5bC0yLjUsMjMuODgsNDQuNjktMTcuN0wyOTQuNzQsMFptLTMwLjYsMTI0LjIyaDQzbDkuNDItOTEuNDVMMjQ1LjYsNjAuNjFaIi8+PC9nPjwvZz48L3N2Zz48L3N2Zz4="><style>:root{--navy:#20335a;--orange:#ec7427;--muted:#788399;--line:#e3e8ef}*{box-sizing:border-box}body{margin:0;background:#f5f7fa;color:var(--navy);font:14px 'Segoe UI',Arial,sans-serif}main{max-width:1040px;margin:auto;padding:24px}button,input,select,textarea{font:inherit}button,.file-button{border:1px solid var(--line);background:white;color:var(--navy);border-radius:8px;padding:10px 14px;cursor:pointer}button:hover{background:#edf1f7}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #ffb780;outline-offset:2px}header,.brand{display:flex;align-items:center;gap:18px}header{justify-content:space-between;margin-bottom:24px}h1{font-size:23px;margin:0 0 3px}h2{font-size:17px;margin:0}small{color:var(--muted);font-size:12px}.clock{text-align:right}.clock span{display:block;font-size:28px;font-weight:750;font-variant-numeric:tabular-nums}.clock small{display:block;margin-top:3px}#zone{font-size:10px}nav{display:flex;gap:10px;margin-bottom:18px}nav button{flex:1;font-weight:650;padding:14px}nav button.active{background:var(--navy);color:white;border-color:var(--navy)}.workspace{background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden}.tabs{display:flex;border-bottom:1px solid var(--line);padding:0 14px}.tabs button{border:0;border-radius:0;padding:16px;color:var(--muted)}.tabs button.active{color:var(--navy);box-shadow:inset 0 -3px var(--orange);font-weight:650}#count{font-size:10px;background:#edf1f7;padding:2px 6px;border-radius:5px}.toolbar{display:flex;gap:10px;padding:18px 20px 8px}.toolbar input{flex:1;min-width:0}.primary{background:var(--orange);color:white;border-color:var(--orange);font-weight:650}.primary:hover{background:#d8641c;color:white}input,select,textarea{border:1px solid var(--line);border-radius:8px;padding:10px;color:var(--navy);background:white}input[type=checkbox]{accent-color:var(--orange)}.list-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 20px}.list-heading p{font-size:12px;color:var(--muted);margin:6px 0 0}.list-heading label{white-space:nowrap;font-size:12px}.row{display:grid;grid-template-columns:75px 1fr auto;align-items:center;gap:18px;padding:16px 20px;border-top:1px solid var(--line)}.time{font-size:23px;font-weight:700;font-variant-numeric:tabular-nums}.time small{display:block;font-weight:400;font-size:10px;margin-top:4px}.identity{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.number{font-size:12px;font-weight:750;color:#40577e}.name{font-size:15px;font-weight:600;margin-top:5px}.formation{display:block;margin-top:5px;font-size:11px}.realization{display:inline-block;padding:4px 8px;border-radius:5px;color:#197148;background:#e8f6ed;font-size:12px;font-weight:650}.pending{font-size:11px;color:#909aad}.actions{display:flex;gap:7px}.actions button{font-size:12px}.empty{padding:40px;text-align:center;color:var(--muted)}.backup{margin-top:18px;color:var(--muted);font-size:12px}.backup summary{cursor:pointer;margin-bottom:12px}.backup p{font-size:11px}.file-button{display:inline-block;margin-left:6px}.file-button input{display:none}footer{font-size:10px;color:var(--muted);padding:16px 0}dialog{border:0;border-radius:13px;padding:22px;width:440px;max-width:94vw;max-height:90vh;color:var(--navy);box-shadow:0 20px 70px #16234140}dialog::backdrop{background:#17294470}.dialog-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.dialog-head small{font-size:10px}.dialog-head h2{margin-top:5px}.dialog-head button{border:0}.dialog-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}#fields label{display:block;font-size:12px;color:var(--muted);margin:12px 0}#fields input,#fields select{display:block;width:100%;margin-top:6px}#fields input[type=time]{font-size:26px;padding:12px}#fields p{font-size:12px;color:var(--muted);line-height:1.6}#fields details{margin-top:15px}#fields summary{font-size:12px;cursor:pointer}#report{width:100%;line-height:1.7;margin-bottom:12px}#reportModal p{font-size:11px;color:var(--muted)}#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;border-radius:8px;padding:12px 18px;display:none;z-index:20;max-width:90vw}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;padding:13px 16px;border-top:1px solid var(--line);white-space:nowrap}th{background:#f8fafc;color:var(--muted);font-size:10px}.history-tools{display:flex;gap:8px;padding:12px 20px}.history-item{padding:17px 20px;border-top:1px solid var(--line)}.history-meta{font-size:11px;color:var(--muted);margin-bottom:8px}.report-preview{white-space:pre-wrap;font-size:12px;line-height:1.8;margin-bottom:12px}#historyFilter{padding:0 20px 8px;font-size:12px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:620px){main{padding:15px 10px}header{gap:10px}.brand{gap:10px}.brand img{width:58px;height:auto}h1{font-size:19px}.brand small{font-size:10px}.clock span{font-size:23px}.clock small{font-size:10px}nav{gap:5px}nav button{font-size:11px;padding:12px 6px}.tabs button{font-size:12px;padding:14px 11px}.toolbar,.list-heading{padding-left:12px;padding-right:12px}.row{padding:14px 12px;grid-template-columns:60px 1fr;gap:10px}.time{font-size:21px}.actions{grid-column:2}.realization{font-size:11px}.list-heading h2{font-size:15px}.list-heading p{font-size:10px}}
+/* Tema gelap — navy, abu kebiruan, dan oranye KAI */
+:root{color-scheme:dark;--navy:#edf2fc;--muted:#9caac1;--line:#29364b;--orange:#f58436}
+body{background:#0b111c;color:var(--navy)}
+header{padding:8px 0 12px}.brand img{background:#fff;padding:10px 12px;box-sizing:content-box;border-radius:11px;box-shadow:0 4px 20px #0003}
+h1{letter-spacing:-.5px}.clock span{color:#ffad72}.clock small{color:#a6b2c6}
+button,.file-button{background:#1a2536;border-color:#334158;color:#e3eaf7}
+button:hover{background:#28364b;border-color:#52627c}
+nav button{background:#121d2d;border-color:#29374d;color:#bbc8dc}
+nav button.active{background:#f58436;border-color:#f58436;color:#141a25;box-shadow:0 5px 20px #f5843615}
+.workspace{background:#121c2b;border-color:#2a374c;box-shadow:0 12px 40px #0002}
+.tabs{background:#111a28}.tabs button{background:transparent;color:#9daec6}.tabs button:hover{background:#1c293c}.tabs button.active{color:#ffad72}
+#count{background:#2a3649;color:#e8edf7}
+input,select,textarea{background:#0d1624;border-color:#34425b;color:#edf2fc}
+input::placeholder{color:#8998af}input[type=checkbox]{accent-color:#f58436}
+.primary{background:#f58436;border-color:#f58436;color:#141a25}.primary:hover{background:#ff9c59;border-color:#ff9c59;color:#101722}
+.row{border-color:#273449}.row:hover{background:#162235}.time{color:#eaf0fb}.number{color:#aabfff}.name{color:#f0f3fa}.pending{color:#91a0b7}
+.realization{background:#153e33;color:#8aebbd;border:1px solid #25634f}
+#toast{background:#23334a;color:#edf4ff;border:1px solid #45607e;box-shadow:0 8px 30px #0005}
+dialog{background:#152132;color:#edf2fc;border:1px solid #34465f;box-shadow:0 25px 100px #0009}dialog::backdrop{background:#030811b8;backdrop-filter:blur(3px)}
+th{background:#172438;color:#adbed6}td{color:#e4ebf7}.history-item{border-color:#29364b}.report-preview{color:#e0e8f6}
+.backup summary:hover{color:#ffad72}.backup p,footer{color:#97a6bd}
+@media(max-width:620px){.brand img{width:54px;padding:8px}.clock span{font-size:22px}}
+</style></head><body>
+<main>
+<header><div class="brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOTQuNzQgMTI0LjIyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzJkMmE3MDt9LmNscy0ye2ZpbGw6I2VkNmIyMzt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPkxvZ28gS0FJIEJhcnU8L3RpdGxlPjxnIGlkPSJMYXllcl8yIj48ZyBpZD0iTGF5ZXJfMS0yIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik05OS41OCwxMjQuMjJoMjguNTZsLTYuNTUtMTAuNzdabTE2LjY3LTE5LjUzTDg2LjU2LDU1LjkxLDE0NC4xMiwwSDk4LjY1YTEzLjY1LDEzLjY1LDAsMCwwLTkuNTQsMy44OEw0OC43OSw0My4yOCw1My4zMywwSDEyLjI3TDAsMTE2LjgxYTYuNzEsNi43MSwwLDAsMCw2LjY4LDcuNDJoMzMuNkw0My4wNyw5OCw1NS40NSw4NmwyMS43OCwzNC40M2E4LjEzLDguMTMsMCwwLDAsNi44NywzLjc4SDk5LjU4bDcuODEtMTUuNTdaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTQxLDEyNC4yMmw1NS42MS0zMy44MSw3LjA4LDI4LjcxYTYuNzEsNi43MSwwLDAsMCw2LjUyLDUuMTFoMzZMMjMwLjEzLDcwbDYxLjI0LTM3LjI0LjI2LTIuNS0xOTIsOTMuOTVabTgzLjM4LTczLjY1TDIwOS4zNywwSDE3NGExOS41MiwxOS41MiwwLDAsMC0xNy40NSwxMC43N0wxMDYsMTExLjM3LDI5MiwyNi41MmwuMjktMi44NVpNMTY0LjYsNzQuMjQsMTc3LDQ4bDMuMjctNy4yNWEyLjIzLDIuMjMsMCwwLDEsNC4xOS4zOGw1LjY3LDIzWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI2OS41MywwYTE5LjUyLDE5LjUyLDAsMCwwLTE5LjQxLDE3LjQ5bC0yLjUsMjMuODgsNDQuNjktMTcuN0wyOTQuNzQsMFptLTMwLjYsMTI0LjIyaDQzbDkuNDItOTEuNDVMMjQ1LjYsNjAuNjFaIi8+PC9nPjwvZz48L3N2Zz4=" alt="KAI" width="80" height="34"><div><h1>Laporan JAKK</h1><small>Created by andyking</small></div></div><div class="clock"><span id="clock"></span><small id="clockDate"></small><small id="zone"></small></div></header>
+<nav id="nav"><button data-cat="r" class="active">Rangkaian DAT JAKK</button><button data-cat="d">Lok dinas</button><button data-cat="m">Lok mantan / pulang</button></nav>
+<section class="workspace"><div class="tabs"><button data-view="live" class="active">Catat</button><button data-view="history">Riwayat / rekap <span id="count">0</span></button><button data-view="schedule">Jadwal</button></div>
+<div class="toolbar"><input id="search" placeholder="Cari nomor / nama KA atau lok…" aria-label="Cari KA atau lok"><button id="refresh" class="primary">↻ Refresh</button></div>
+<div class="list-heading"><div><h2 id="heading"></h2><p id="hint"></p></div><label id="allWrap"><input type="checkbox" id="all"> Semua</label><select id="scope" hidden aria-label="Kategori rekap"><option value="all">Semua kategori</option><option value="r">Rangkaian</option><option value="d">Lok dinas</option><option value="m">Lok mantan</option></select></div>
+<div id="historyFilter" hidden><label><input type="checkbox" id="oldHistory"> Sertakan riwayat hari sebelumnya</label></div><div id="content"></div></section>
+<details class="backup"><summary>Cadangan data</summary><button id="backup">Unduh cadangan</button><label class="file-button">Pulihkan cadangan<input type="file" id="restore" accept=".json"></label><p>Data tersimpan di browser ini. Cadangan dapat dipulihkan di versi baru.</p></details>
+<footer>Tanggal otomatis mengikuti PC • Jadwal acuan dari contoh laporan, dapat diedit pada menu Jadwal.</footer></main>
+<dialog id="modal"><form id="entry"><div class="dialog-head"><div><small id="modalLabel">PENCATATAN AKTUAL</small><h2 id="modalTitle"></h2></div><button type="button" id="close">✕</button></div><div id="fields"></div><div class="dialog-actions"><button type="button" id="cancel">Batal</button><button class="primary" type="submit">Simpan</button></div></form></dialog>
+<dialog id="reportModal"><div class="dialog-head"><h2>Laporan siap disalin</h2><button id="closeReport">✕</button></div><textarea id="report" rows="8" readonly></textarea><button class="primary" id="copyReport">Salin laporan</button><p>Jika penyalinan diblokir browser, pilih teks lalu tekan Ctrl+C.</p></dialog><div id="toast" role="status"></div><script>const DEFAULT_DATA = [
+  {
+    "id": "R25",
+    "cat": "r",
+    "name": "MURIA",
+    "time": "00:41",
+    "formation": "9K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "00:53",
+    "sourceDelta": 12,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R127",
+    "cat": "r",
+    "name": "Pangandaran",
+    "time": "01:31",
+    "formation": "1Pano 3K1 4K3 1M 1P",
+    "action": "Dat",
+    "sourceTime": "01:25",
+    "sourceDelta": -6,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R57F",
+    "cat": "r",
+    "name": "Purwojaya",
+    "time": "02:31",
+    "formation": "9K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "02:37",
+    "sourceDelta": 6,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R35",
+    "cat": "r",
+    "name": "Gajayana",
+    "time": "03:28",
+    "formation": "1Lux 8K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "03:33",
+    "sourceDelta": 5,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R45",
+    "cat": "r",
+    "name": "Taksaka",
+    "time": "03:37",
+    "formation": "2Lux 8K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "03:42",
+    "sourceDelta": 5,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R15",
+    "cat": "r",
+    "name": "Argo Dwipangga",
+    "time": "03:51",
+    "formation": "2Lux 7K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "03:53",
+    "sourceDelta": 2,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R19",
+    "cat": "r",
+    "name": "MURIA",
+    "time": "04:11",
+    "formation": "9K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "04:07",
+    "sourceDelta": -4,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R37",
+    "cat": "r",
+    "name": "Brawijaya",
+    "time": "04:31",
+    "formation": "8K1 1Priority 1M 1P",
+    "action": "Dat",
+    "sourceTime": "04:34",
+    "sourceDelta": 3,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R31",
+    "cat": "r",
+    "name": "Pandalungan",
+    "time": "04:51",
+    "formation": "1Prio 8K1 1M 1P 1B",
+    "action": "Dat",
+    "sourceTime": "04:55",
+    "sourceDelta": 4,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R41",
+    "cat": "r",
+    "name": "Sembrani",
+    "time": "05:13",
+    "formation": "2Lux 8K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "05:12",
+    "sourceDelta": -1,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R3",
+    "cat": "r",
+    "name": "Anggrek",
+    "time": "05:24",
+    "formation": "1T1 8K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "05:34",
+    "sourceDelta": 10,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R63",
+    "cat": "r",
+    "name": "Manahan",
+    "time": "07:00",
+    "formation": "1Panoramic 8K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "07:22",
+    "sourceDelta": 22,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/R7001A",
+    "cat": "r",
+    "name": "Gajayana Tambahan",
+    "time": "08:42",
+    "formation": "8K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "09:00",
+    "sourceDelta": 18,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R17",
+    "cat": "r",
+    "name": "MURIA",
+    "time": "12:40",
+    "formation": "9K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "12:47",
+    "sourceDelta": 7,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/R7007C",
+    "cat": "r",
+    "name": "Tambahan YK - GMR",
+    "time": "14:13",
+    "formation": "1Imperial 8K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "14:19",
+    "sourceDelta": 6,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R133",
+    "cat": "r",
+    "name": "Parahyangan",
+    "time": "14:32",
+    "formation": "8K1 1Lux 1M 1P",
+    "action": "Dat",
+    "sourceTime": "14:32",
+    "sourceDelta": 0,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R13",
+    "cat": "r",
+    "name": "Argo Lawu",
+    "time": "15:53",
+    "formation": "7K1 1M 1P 2Luxury",
+    "action": "Dat",
+    "sourceTime": "15:53",
+    "sourceDelta": 0,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R137",
+    "cat": "r",
+    "name": "Parahyangan",
+    "time": "16:27",
+    "formation": "8K1 1M 1P 1Priority",
+    "action": "Dat",
+    "sourceTime": "16:39",
+    "sourceDelta": 12,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R39",
+    "cat": "r",
+    "name": "Sembrani",
+    "time": "16:46",
+    "formation": "8K1 2Lux 1M 1P",
+    "action": "Dat",
+    "sourceTime": "16:49",
+    "sourceDelta": 3,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/R75",
+    "cat": "r",
+    "name": "Mataram",
+    "time": "17:18",
+    "formation": "7K3 2K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "17:12",
+    "sourceDelta": -6,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R1",
+    "cat": "r",
+    "name": "Anggrek",
+    "time": "17:21",
+    "formation": "8K1 1T1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "17:20",
+    "sourceDelta": -1,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R61",
+    "cat": "r",
+    "name": "Manahan",
+    "time": "17:56",
+    "formation": "8K1 1M 1P 1Panoramic",
+    "action": "Dat",
+    "sourceTime": "17:57",
+    "sourceDelta": 1,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "R29F",
+    "cat": "r",
+    "name": "Argo Anjasmoro",
+    "time": "21:36",
+    "formation": "8K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "21:33",
+    "sourceDelta": -3,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/R7049",
+    "cat": "r",
+    "name": "Pandalungan Tambahan",
+    "time": "22:35",
+    "formation": "8K1 1M 1P",
+    "action": "Dat",
+    "sourceTime": "22:22",
+    "sourceDelta": -13,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L25-2",
+    "cat": "m",
+    "name": "MURIA",
+    "time": "01:22",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "01:06",
+    "sourceDelta": -16,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L127-2",
+    "cat": "m",
+    "name": "Pangandaran",
+    "time": "02:14",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "01:37",
+    "sourceDelta": -37,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L57F",
+    "cat": "m",
+    "name": "Purwojaya",
+    "time": "03:20",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "02:52",
+    "sourceDelta": -28,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L35-2",
+    "cat": "m",
+    "name": "Gajayana",
+    "time": "04:14",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "03:48",
+    "sourceDelta": -26,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L45-2",
+    "cat": "m",
+    "name": "Taksaka",
+    "time": "04:14",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "04:01",
+    "sourceDelta": -13,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L15-2",
+    "cat": "m",
+    "name": "Argo Dwipangga",
+    "time": "04:29",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "04:15",
+    "sourceDelta": -14,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L19-2",
+    "cat": "m",
+    "name": "MURIA",
+    "time": "04:50",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "04:37",
+    "sourceDelta": -13,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L37-2",
+    "cat": "m",
+    "name": "Brawijaya",
+    "time": "05:05",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "04:50",
+    "sourceDelta": -15,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L31-2",
+    "cat": "m",
+    "name": "Pandalungan",
+    "time": "05:22",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "05:11",
+    "sourceDelta": -11,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L41-2",
+    "cat": "m",
+    "name": "Sembrani",
+    "time": "05:45",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "05:40",
+    "sourceDelta": -5,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L3-2",
+    "cat": "m",
+    "name": "Anggrek",
+    "time": "06:04",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "05:48",
+    "sourceDelta": -16,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L63-2",
+    "cat": "m",
+    "name": "Manahan",
+    "time": "07:37",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "07:36",
+    "sourceDelta": -1,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/L7001A-2",
+    "cat": "m",
+    "name": "Gajayana Tambahan",
+    "time": "09:32",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "09:18",
+    "sourceDelta": -14,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L17-2",
+    "cat": "m",
+    "name": "MURIA",
+    "time": "13:17",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "13:02",
+    "sourceDelta": -15,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/L7007C-2",
+    "cat": "m",
+    "name": "Tambahan YK - GMR",
+    "time": "14:55",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "14:34",
+    "sourceDelta": -21,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L133-2",
+    "cat": "m",
+    "name": "Parahyangan",
+    "time": "15:26",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "14:48",
+    "sourceDelta": -38,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L13-2",
+    "cat": "m",
+    "name": "Argo Lawu",
+    "time": "16:30",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "16:10",
+    "sourceDelta": -20,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L137-2",
+    "cat": "m",
+    "name": "Parahyangan",
+    "time": "17:20",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "16:53",
+    "sourceDelta": -27,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L39-2",
+    "cat": "m",
+    "name": "Sembrani",
+    "time": "17:20",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "17:10",
+    "sourceDelta": -10,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/L75-2",
+    "cat": "m",
+    "name": "Mataram",
+    "time": "18:08",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "17:40",
+    "sourceDelta": -28,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L1-2",
+    "cat": "m",
+    "name": "Anggrek",
+    "time": "18:01",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "17:40",
+    "sourceDelta": -21,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L61-2",
+    "cat": "m",
+    "name": "Manahan",
+    "time": "18:35",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "18:13",
+    "sourceDelta": -22,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L29F-2",
+    "cat": "m",
+    "name": "Argo Anjasmoro",
+    "time": "22:08",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "21:48",
+    "sourceDelta": -20,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/L7049-2",
+    "cat": "m",
+    "name": "Pandalungan",
+    "time": "23:22",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "22:44",
+    "sourceDelta": -38,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/LL107A",
+    "cat": "m",
+    "name": "Langsir JAKK",
+    "time": "00:50",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "02:29",
+    "sourceDelta": 99,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L26-1",
+    "cat": "d",
+    "name": "MURIA",
+    "time": "04:26",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "04:22",
+    "sourceDelta": -4,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L130-1",
+    "cat": "d",
+    "name": "Papandayan",
+    "time": "05:20",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "05:12",
+    "sourceDelta": -8,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L50F-1",
+    "cat": "d",
+    "name": "Purwojaya fakultatif",
+    "time": "05:35",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "05:28",
+    "sourceDelta": -7,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L20-1",
+    "cat": "d",
+    "name": "Argo Muria",
+    "time": "05:44",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "05:44",
+    "sourceDelta": 0,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L132-1",
+    "cat": "d",
+    "name": "Parahyangan",
+    "time": "06:15",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "06:04",
+    "sourceDelta": -11,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L46-1",
+    "cat": "d",
+    "name": "Taksaka",
+    "time": "06:15",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "06:04",
+    "sourceDelta": -11,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L2-1",
+    "cat": "d",
+    "name": "Anggrek",
+    "time": "07:02",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "07:02",
+    "sourceDelta": 0,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L16-1",
+    "cat": "d",
+    "name": "Argo Dwipangga",
+    "time": "07:35",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "07:42",
+    "sourceDelta": 7,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/L7050-1",
+    "cat": "d",
+    "name": "Pandalungan",
+    "time": "07:55",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "08:05",
+    "sourceDelta": 10,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L138-1",
+    "cat": "d",
+    "name": "Parahyangan",
+    "time": "08:01",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "08:08",
+    "sourceDelta": 7,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L40-1",
+    "cat": "d",
+    "name": "Sembrani",
+    "time": "08:41",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "08:36",
+    "sourceDelta": -5,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L62-1",
+    "cat": "d",
+    "name": "Manahan",
+    "time": "08:56",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "09:09",
+    "sourceDelta": 13,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L38-1",
+    "cat": "d",
+    "name": "Brawijaya",
+    "time": "14:18",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "14:15",
+    "sourceDelta": -3,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L18-1",
+    "cat": "d",
+    "name": "MURIA",
+    "time": "15:06",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "15:02",
+    "sourceDelta": -4,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/L7008C-1",
+    "cat": "d",
+    "name": "Tambahan GMR - YK",
+    "time": "15:53",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "15:48",
+    "sourceDelta": -5,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L36-1",
+    "cat": "d",
+    "name": "Gajayana",
+    "time": "17:05",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "17:22",
+    "sourceDelta": 17,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L42-1",
+    "cat": "d",
+    "name": "Sembrani",
+    "time": "18:12",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "18:08",
+    "sourceDelta": -4,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L32-1",
+    "cat": "d",
+    "name": "Pandalungan",
+    "time": "18:29",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "18:33",
+    "sourceDelta": 4,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L4-1",
+    "cat": "d",
+    "name": "Anggrek",
+    "time": "19:22",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "19:20",
+    "sourceDelta": -2,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L14-1",
+    "cat": "d",
+    "name": "Argo Lawu",
+    "time": "19:22",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "19:20",
+    "sourceDelta": -2,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/L76-1",
+    "cat": "d",
+    "name": "Mataram",
+    "time": "20:20",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "20:23",
+    "sourceDelta": 3,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L64-1",
+    "cat": "d",
+    "name": "Manahan",
+    "time": "21:35",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "21:34",
+    "sourceDelta": -1,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "L30F-1",
+    "cat": "d",
+    "name": "Argo Anjasmoro",
+    "time": "22:25",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "22:22",
+    "sourceDelta": -3,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "D1/L7002A-1",
+    "cat": "d",
+    "name": "Gajayana Tambahan",
+    "time": "22:50",
+    "formation": "",
+    "action": "Dat",
+    "sourceTime": "22:43",
+    "sourceDelta": -7,
+    "scheduleDayOffset": 0
+  },
+  {
+    "id": "LL108",
+    "cat": "d",
+    "name": "Langsir JAKK",
+    "time": "00:04",
+    "formation": "",
+    "action": "Ber",
+    "sourceTime": "23:44",
+    "sourceDelta": -20,
+    "scheduleDayOffset": 1
+  }
+];
+
+'use strict';
+const $=s=>document.querySelector(s), KEY='jakk-laporan-v1';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad=n=>String(n).padStart(2,'0');
+const dateKey=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const hhmm=d=>`${pad(d.getHours())}:${pad(d.getMinutes())}`;
+const localInput=d=>dateKey(d)+'T'+hhmm(d);
+const labels={r:'Rangkaian DAT JAKK',d:'Lok dinas',m:'Lok mantan / pulang'};
+let data=structuredClone(DEFAULT_DATA),history=[],cat='r',view='live',editing=null;
+function validData(a){return Array.isArray(a)&&a.length===74&&new Set(a.map(x=>x.id)).size===74&&a.every(x=>DEFAULT_DATA.some(d=>d.id===x.id&&d.cat===x.cat)&&typeof x.name==='string'&&typeof x.formation==='string'&&/^([01]\d|2[0-3]):[0-5]\d$/.test(x.time)&&['Dat','Ber'].includes(x.action))}
+function validHistory(a){return Array.isArray(a)&&a.every(x=>x&&typeof x.uid==='string'&&typeof x.report==='string'&&['r','d','m'].includes(x.cat)&&DEFAULT_DATA.some(d=>d.id===x.id)&&/^\d{4}-\d{2}-\d{2}$/.test(x.day)&&Number.isFinite(new Date(x.actual).getTime()))}
+try{const saved=JSON.parse(localStorage.getItem(KEY));if(saved&&validData(saved.data)&&validHistory(saved.history)){data=saved.data;history=saved.history}}catch(e){setTimeout(()=>toast('Penyimpanan tidak tersedia atau data tidak terbaca. Unduh cadangan.'),500)}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify({version:1,data,history}));return true}catch(e){toast('Gagal menyimpan di browser. Segera unduh cadangan.');return false}}
+function toast(s){$('#toast').textContent=s;$('#toast').style.display='block';clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').style.display='none',4500)}
+function scheduled(d,day){return new Date(day+'T'+d.time+':00')}
+function difference(actual,schedule){const a=new Date(actual);a.setSeconds(0,0);return Math.round((a-schedule)/60000)}
+function deltaText(n){return n===0?'Tepat':`(${n>0?'+':''}${n}')`}
+function match(d,q){return (d.id+' '+d.name+' '+d.formation).toLowerCase().includes(q)}
+function record(d,day){return [...history].reverse().find(h=>h.id===d.id&&h.actual.slice(0,10)===day)}
+function closestSchedule(d,actual){return [-1,0,1].map(offset=>{let day=new Date(actual);day.setDate(day.getDate()+offset);return scheduled(d,dateKey(day))}).sort((a,b)=>Math.abs(a-actual)-Math.abs(b-actual))[0]}
+function render(){const day=dateKey(new Date()),q=$('#search').value.trim().toLowerCase();$('#count').textContent=history.filter(h=>h.actual.slice(0,10)===day).length;$('#heading').textContent=view==='live'?labels[cat]:view==='schedule'?'Jadwal tepat':'Riwayat / rekap';$('#allWrap').hidden=view!=='live';$('#scope').hidden=view==='live';$('#historyFilter').hidden=view!=='history';$('#hint').textContent=view==='live'?'7 jadwal terdekat • Isi jam saja, tanggal otomatis hari ini':view==='schedule'?'Cari jadwal atau ubah melalui Reschedule':'Semua pencatatan tersimpan, termasuk koreksi';
+if(view==='live'){let now=new Date();let rows=data.filter(d=>d.cat===cat&&match(d,q)).map(d=>({d,at:closestSchedule(d,now)}));rows.sort((a,b)=>Math.abs(a.at-now)-Math.abs(b.at-now)||a.at-b.at);if(!$('#all').checked&&!q)rows=rows.slice(0,7);if($('#all').checked||q)rows.sort((a,b)=>a.d.time.localeCompare(b.d.time));$('#content').innerHTML=rows.map(({d})=>{let done=record(d,day);let real=done?hhmm(new Date(done.actual)):'';return `<div class="row"><div class="time">${d.time}<small>${d.action} Jakk</small></div><div><div class="identity"><span class="number">${esc(d.id)}</span>${done?`<span class="realization">✓ Realisasi ${real}</span>`:'<span class="pending">Belum dicatat</span>'}</div><div class="name">${esc(d.name)}</div><small class="formation">${esc(d.formation||'Lokomotif')}</small></div><div class="actions">${done?`<button data-do="copy" data-uid="${esc(done.uid)}">Salin</button>`:'<button class="primary" data-do="tap" data-id="'+esc(d.id)+'">● TAP IN</button>'}<button data-do="manual" data-id="${esc(d.id)}">${done?'Edit jam':'Isi jam'}</button></div></div>`}).join('')||'<div class="empty">Tidak ada KA / lok yang cocok.</div>'}
+if(view==='schedule'){let rows=data.filter(d=>match(d,q)&&($('#scope').value==='all'||d.cat===$('#scope').value)).sort((a,b)=>a.time.localeCompare(b.time));$('#content').innerHTML='<div class="table-wrap"><table><thead><tr><th>JAM TEPAT</th><th>NOMOR / KATEGORI</th><th>NAMA KA / LOK</th><th>GERAK</th><th>STAMFORMASI NORMAL</th><th></th></tr></thead><tbody>'+rows.map(d=>`<tr><td><b>${d.time}</b></td><td>${esc(d.id)}<small style="display:block;color:#738098">${labels[d.cat]}</small></td><td>${esc(d.name)}</td><td>${d.action} Jakk</td><td>${esc(d.formation||'—')}</td><td><button data-do="schedule" data-id="${esc(d.id)}">Reschedule</button></td></tr>`).join('')+'</tbody></table></div>'}
+if(view==='history'){let rows=history.filter(h=>($('#oldHistory').checked||h.actual.slice(0,10)===day)&&($('#scope').value==='all'||h.cat===$('#scope').value)&&(h.report.toLowerCase().includes(q))).sort((a,b)=>new Date(b.actual)-new Date(a.actual));window.visibleHistory=rows;$('#content').innerHTML='<div class="history-tools"><button class="primary" id="copyAll">Salin semua hasil</button><button id="downloadReports">Unduh TXT</button></div>'+ (rows.map(h=>`<div class="history-item"><div class="identity"><span class="number">${esc(h.id)}</span><span class="realization">Realisasi ${hhmm(new Date(h.actual))}</span></div><div class="history-meta">${h.corrects?'Koreksi · ':''}${labels[h.cat]} · Jadwal ${esc(h.day)} ${esc(h.schedule)} · Aktual ${esc(h.actual.replace('T',' '))}</div><div class="report-preview">${esc(h.report)}</div><div class="actions"><button data-do="copy" data-uid="${esc(h.uid)}">Salin</button><button data-do="correct" data-uid="${esc(h.uid)}">Koreksi</button><button data-do="delete" data-uid="${esc(h.uid)}">Hapus</button></div></div>`).join('')||'<div class="empty">Belum ada laporan pada tanggal ini.</div>')}
+}
+function field(label,id,type,value,extra=''){return `<label>${label}<input id="${id}" type="${type}" value="${esc(value)}" ${extra}></label>`}
+function openEntry(id,mode,unused,existing){let d=data.find(d=>d.id===id),now=new Date(),day=dateKey(now),prev=existing||record(d,day);editing={id,mode,prev,day:existing?existing.actual.slice(0,10):day};$('#modalLabel').textContent=mode==='schedule'?'UBAH JADWAL':'ISI JAM · '+editing.day;$('#modalTitle').textContent=d.id+' · '+d.name;
+if(mode==='tap'){saveEntry(d,localInput(now),d.formation,'S.21 Lengkap',null);return}
+if(mode==='schedule'){$('#fields').innerHTML=field('Nama KA / lok','fName','text',d.name,'required maxlength="100"')+field('Jadwal tepat','fTime','time',d.time,'required')+`<label>Gerak<select id="fAction"><option ${d.action==='Dat'?'selected':''}>Dat</option><option ${d.action==='Ber'?'selected':''}>Ber</option></select></label>`+(d.cat==='r'?field('Stamformasi normal','fFormation','text',d.formation,'required maxlength="200"'):'')}
+else{$('#fields').innerHTML=field('Jam realisasi','fActual','time',prev?hhmm(new Date(prev.actual)):hhmm(now),'required')+'<p id="deltaPreview"></p><details><summary>Ubah stamformasi / keterangan S.21</summary>'+(d.cat==='r'?field('Stamformasi','fFormation','text',prev?.formation??d.formation,'required maxlength="200"'):'')+field('Keterangan','fS21','text',prev?.s21??'S.21 Lengkap','required maxlength="200"')+'</details>';$('#fActual').addEventListener('input',preview);preview()}
+$('#modal').showModal()}
+function actualDay(){return editing.prev&&editing.prev.actual.slice(0,10)!==dateKey(new Date())?editing.day:dateKey(new Date())}
+function scheduleFor(d,actual,prev){return prev?new Date(prev.day+'T'+prev.schedule):closestSchedule(d,new Date(actual))}
+function preview(){let d=data.find(d=>d.id===editing.id),actual=actualDay()+'T'+$('#fActual').value,s=scheduleFor(d,actual,editing.prev),n=difference(new Date(actual),s);$('#deltaPreview').textContent=Number.isFinite(n)?`Jadwal ${hhmm(s)} · ${deltaText(n)}`:''}
+function saveEntry(d,actual,formation,s21,prev){let schedule=scheduleFor(d,actual,prev),n=difference(new Date(actual),schedule);if(!Number.isFinite(n))return toast('Jam tidak valid.');let name=d.cat==='r'?d.name:'Dinas Lok '+d.name;let report=`${d.id} *${name}* ${d.action} Jakk ${hhmm(new Date(actual))} ${deltaText(n)}${d.cat==='r'?'\nSf '+formation+', ':', '}${s21}`;let h={uid:String(Date.now())+'-'+Math.random().toString(16).slice(2),id:d.id,cat:d.cat,day:dateKey(schedule),actual,schedule:hhmm(schedule),formation,s21,report,corrects:prev?.uid||null};history.push(h);let saved=persist();$('#modal').close();render();if(saved)toast(`${d.id} · realisasi ${hhmm(new Date(actual))} tersimpan`)}
+$('#entry').onsubmit=e=>{e.preventDefault();const d=data.find(d=>d.id===editing.id);if(editing.mode==='schedule'){d.name=$('#fName').value.trim();d.time=$('#fTime').value;d.action=$('#fAction').value;if(d.cat==='r')d.formation=$('#fFormation').value.trim();let saved=persist();$('#modal').close();render();if(saved)toast('Jadwal diperbarui.');return}saveEntry(d,actualDay()+'T'+$('#fActual').value,d.cat==='r'?$('#fFormation').value.trim():'',$('#fS21').value.trim(),editing.prev)};
+function showReport(s){$('#report').value=s;$('#reportModal').showModal()}
+async function copy(s){try{await navigator.clipboard.writeText(s);toast('Laporan berhasil disalin.')}catch(e){$('#report').value=s;if(!$('#reportModal').open)$('#reportModal').showModal();$('#report').focus();$('#report').select();try{if(!document.execCommand('copy'))throw Error();toast('Laporan berhasil disalin.')}catch(e){toast('Teks dipilih. Tekan Ctrl+C untuk menyalin.')}}}
+function download(name,s,type='text/plain'){let url=URL.createObjectURL(new Blob([s],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)}
+function combined(){return (window.visibleHistory||[]).map(h=>h.report).join('\n\n')}
+$('#content').onclick=e=>{let b=e.target.closest('button');if(!b)return;let action=b.dataset.do,h=history.find(x=>x.uid===b.dataset.uid);if(['tap','manual','schedule'].includes(action))openEntry(b.dataset.id,action,dateKey(new Date()));if(action==='copy')copy(h.report);if(action==='correct')openEntry(h.id,'manual',h.day,h);if(action==='delete'&&confirm('Hapus laporan '+h.id+' ini?')){history=history.filter(x=>x.uid!==h.uid);persist();render()}if(b.id==='copyAll')copy(combined());if(b.id==='downloadReports')download('Laporan-JAKK-'+dateKey(new Date())+'.txt',combined())};
+$('#nav').onclick=e=>{let b=e.target.closest('[data-cat]');if(!b)return;cat=b.dataset.cat;view='live';document.querySelectorAll('#nav button').forEach(x=>x.classList.toggle('active',x===b));syncTabs();render()};
+function syncTabs(){document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view))}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;syncTabs();render()});
+function refresh(){view='live';$('#search').value='';$('#all').checked=false;$('#scope').value='all';$('#oldHistory').checked=false;syncTabs();render();window.scrollTo({top:0,behavior:'smooth'});toast('7 jadwal terdekat diperbarui sesuai jam PC.')}
+$('#refresh').onclick=refresh;$('#search').oninput=render;$('#all').onchange=render;$('#scope').onchange=render;$('#oldHistory').onchange=render;
+$('#close').onclick=$('#cancel').onclick=()=>$('#modal').close();$('#closeReport').onclick=()=>$('#reportModal').close();$('#copyReport').onclick=()=>copy($('#report').value);
+$('#backup').onclick=()=>download('Cadangan-JAKK-'+dateKey(new Date())+'.json',JSON.stringify({version:1,data,history},null,2),'application/json');
+$('#restore').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let o=JSON.parse(await f.text());if(o.version!==1||!validData(o.data)||!validHistory(o.history))throw Error();if(confirm('Ganti jadwal dan riwayat browser ini dengan cadangan?')){data=o.data;history=o.history;persist();render();toast('Cadangan dipulihkan.')}}catch(e){toast('File cadangan tidak valid. Data tidak diubah.')}finally{$('#restore').value=''}};
+let lastMinute='';function tick(){let now=new Date();$('#clock').textContent=now.toLocaleTimeString('id-ID',{hour12:false}).replaceAll('.',':');$('#clockDate').textContent=now.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});$('#zone').textContent='PAP JAKK · '+Intl.DateTimeFormat().resolvedOptions().timeZone;let minute=localInput(now);if(minute!==lastMinute){lastMinute=minute;render()}}tick();setInterval(tick,1000);
+</script></body></html>
